@@ -77,6 +77,8 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	body.ID = getID
+
 	result := mckcat.Update(body, getID)
 
 	json.NewEncoder(w).Encode(result)
